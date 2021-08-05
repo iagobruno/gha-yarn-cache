@@ -46,8 +46,8 @@ async function run() {
   const directory = core.getInput('directory') || '';
   const lockFilePath = path.resolve(directory, 'yarn.lock');
 
-  console.log('directory', directory)
-  console.log('lockFilePath', lockFilePath)
+  core.info('directory =' + directory)
+  core.info('lockFilePath =' + lockFilePath)
   const hash = md5File.sync(lockFilePath);
 
   const primaryKey = `${os}-yarn-cache-${hash}`;
