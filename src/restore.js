@@ -44,7 +44,7 @@ async function run() {
   const cachePath = await yarnCache();
   core.saveState("YARN_CACHE_PATH", cachePath);
   const directory = core.getInput('directory') || '';
-  const lockFilePath = path.resolve(directory, 'yarn.lock');
+  const lockFilePath = path.join(directory, 'yarn.lock');
 
   core.info('directory =' + directory)
   core.info('lockFilePath =' + lockFilePath)
