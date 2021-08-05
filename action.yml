@@ -6,6 +6,10 @@ runs:
   main: 'dist/restore/index.js'
   post: 'dist/save/index.js'
   post-if: 'success()'
+inputs:
+  directory:
+    description: "Which folder to look for yarn.lock file"
+    required: false
 outputs:
   cache-hit:
     description: 'A boolean value to indicate an exact match was found for the primary key'
