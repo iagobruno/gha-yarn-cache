@@ -2,7 +2,7 @@ const core = require("@actions/core");
 const exec = require("@actions/exec");
 const md5File = require("md5-file");
 const cache = require("@actions/cache");
-const path = require('path');
+const path = require("path");
 
 async function uname() {
   let output = "";
@@ -43,8 +43,8 @@ async function run() {
   const os = await uname();
   const cachePath = await yarnCache();
   core.saveState("YARN_CACHE_PATH", cachePath);
-  const directory = core.getInput('directory') || '';
-  const lockFilePath = path.join(directory, 'yarn.lock');
+  const directory = core.getInput("directory") || "";
+  const lockFilePath = path.join(directory, "yarn.lock");
 
   const hash = md5File.sync(lockFilePath);
 
