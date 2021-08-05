@@ -69,6 +69,18 @@ jobs:
 - uses: c-hive/gha-yarn-cache@v2
 ```
 
+## Inputs
+
+By default, this action looks for yarn.lock file in the project root but you can specify another nested folder with the "directory" input:
+
+```yml
+- uses: c-hive/gha-yarn-cache@v2
+  with:
+    directory: packages/core
+```
+
+See [action.yml](./action.yml) for details.
+
 ## Conventions
 
 This project follows [C-Hive guides](https://github.com/c-hive/guides) for code style, way of working and other development concerns.
